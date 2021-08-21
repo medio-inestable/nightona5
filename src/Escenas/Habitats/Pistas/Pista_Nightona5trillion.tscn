@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 29, 1.00306, 29 )
+
+[node name="Pista_Nightona5trillion" type="Spatial"]
+
+[node name="Piso" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Piso"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="Piso"]
+width = 58.259
+depth = 59.326
