@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Codigos/Locales/Habitats/Objetos/Camaras.gd" type="Script" id=1]
+
+[node name="Camaras" type="Spatial"]
+script = ExtResource( 1 )
+camara_1 = NodePath("Camara_1")
+camara_2 = NodePath("Camara_2")
+camara_3 = NodePath("Camara_3")
+camara_4 = NodePath("Camara_4")
+
+[node name="Camara_1" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.881559, 0.472074, 0, -0.472074, 0.881559, 0, 23.617, 42.526 )
+fov = 38.8
+
+[node name="Camara_2" type="Camera" parent="."]
+transform = Transform( -4.2222e-08, 0.258819, -0.965926, 1.13133e-08, 0.965926, 0.258819, 1, 0, -4.37114e-08, -28.9192, 12.9849, 0 )
+fov = 38.8
+
+[node name="Camara_3" type="Camera" parent="."]
+transform = Transform( -1, -5.32907e-15, 8.74228e-08, 4.81475e-08, 0.834675, 0.550743, -7.29696e-08, 0.550743, -0.834675, 0, 28.1657, -55.6257 )
+current = true
+
+[node name="Camara_4" type="Camera" parent="."]
+transform = Transform( 1.29645e-07, -0.258819, 0.965926, 1.13133e-08, 0.965926, 0.258819, -1, -2.26267e-08, 1.28155e-07, 34.0808, 12.9849, 0 )
+fov = 16.8
