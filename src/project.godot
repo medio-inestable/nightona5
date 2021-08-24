@@ -10,13 +10,21 @@ config_version=4
 
 [application]
 
-config/name="Src"
+config/name="SUPERSENSORY"
 run/main_scene="res://Escenas/Ambientes/Nightona5trillion.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Senales="*res://Codigos/Globales/Senales.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=1280
+window/size/resizable=false
+window/size/test_width=640
+window/size/test_height=640
 
 [input]
 
