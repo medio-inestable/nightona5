@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 29, 1.00306, 29 )
+extents = Vector3( 29, 3.57929, 29 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.0705882, 0.0705882, 0.0823529, 1 )
@@ -10,11 +10,14 @@ metallic = 0.2
 [node name="Pista_Nightona5trillion" type="Spatial"]
 
 [node name="Piso" type="StaticBody" parent="."]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Piso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34575, 0 )
 shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Piso"]
+use_in_baked_light = true
 width = 58.259
 depth = 59.326
 material = SubResource( 2 )
