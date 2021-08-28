@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Recursos/Graficos/Modelos/TsuruPLACEHOLDER.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Codigos/Locales/Habitats/Personajes/Tsuru_3d.gd" type="Script" id=2]
+
+[node name="TsuruPLACEHOLDER" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Llantas" parent="." index="0"]
+transform = Transform( -1.76901e-08, -0.404703, 1.76901e-08, 0, -1.76901e-08, -0.404703, 0.404703, -1.76901e-08, 7.73259e-16, -0.68737, -0.443835, 1.35596 )
+layers = 2
+
+[node name="Tsuru" parent="." index="1"]
+transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 0, 0, 0 )
+layers = 2
+use_in_baked_light = true

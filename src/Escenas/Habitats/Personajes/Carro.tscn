@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Codigos/Locales/Habitats/Personajes/Carro_prueba.gd" type="Script" id=1]
+[ext_resource path="res://Recursos/Graficos/Modelos/TsuruPLACEHOLDER.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Recursos/Textos/Tipografia/outward-round.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.1
+
+[sub_resource type="SphereShape" id=2]
+radius = 1.58785
+
+[sub_resource type="DynamicFont" id=3]
+size = 150
+font_data = ExtResource( 3 )
+
+[sub_resource type="PhysicsMaterial" id=8]
+
+[sub_resource type="CapsuleShape" id=9]
+radius = 1.796
+height = 6.59975
+
+[node name="Carro" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19619, 0 )
+script = ExtResource( 1 )
+acceleration = 70.0
+steering = 15.0
+turn_speed = 3.0
+peso_colliders_player = 40
+peso_colliders_npc = 40
+
+[node name="Cajita" type="RigidBody" parent="."]
+collision_mask = 0
+physics_material_override = SubResource( 1 )
+gravity_scale = 10.0
+angular_damp = 5.0
+
+[node name="Bola" type="CollisionShape" parent="Cajita"]
+shape = SubResource( 2 )
+
+[node name="Tsuru" type="Spatial" parent="."]
+
+[node name="RayCast" type="RayCast" parent="Tsuru"]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 0, -1.66006, 0 )
+enabled = true
+
+[node name="Camera_exterior" type="Camera" parent="Tsuru"]
+transform = Transform( 1, 0, 7.15256e-07, 0, 1, 0, -7.15256e-07, 0, 1, -0.28252, 0.739228, 0.0541564 )
+cull_mask = 1016801
+current = true
+fov = 90.0
+far = 600.0
+
+[node name="Control" type="Control" parent="Tsuru"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 640, 640 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Tsuru/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Tsuru/Control/ViewportContainer"]
+size = Vector2( 640, 640 )
+size_override_stretch = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera_interior" type="Camera" parent="Tsuru/Control/ViewportContainer/Viewport"]
+transform = Transform( 1, 5.34288e-09, 7.15236e-07, 0, 0.999972, -0.00746989, -7.15256e-07, 0.00746989, 0.999972, -0.415999, 3.00553, 0.645379 )
+cull_mask = 1016802
+current = true
+fov = 49.9025
+far = 600.0
+
+[node name="TsuruPLACEHOLDER" parent="Tsuru/Control/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+transform = Transform( 1.73625, 0, 4.13954e-07, 0, 1.73625, 0, -4.13954e-07, 0, 1.73625, 0, 2.19619, 0 )
+
+[node name="velocimetro" type="RichTextLabel" parent="Tsuru/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -202.0
+margin_top = -166.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+tab_size = 5
+text = "200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tsuru_carcasa" type="Spatial" parent="."]
+
+[node name="cola" type="RigidBody" parent="Tsuru_carcasa"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676073, 0 )
+collision_layer = 4
+collision_mask = 4
+physics_material_override = SubResource( 8 )
+gravity_scale = 10.0
+contacts_reported = 5
+contact_monitor = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Tsuru_carcasa/cola"]
+shape = SubResource( 9 )
+
+[node name="TsuruPLACEHOLDER" parent="Tsuru_carcasa/cola" instance=ExtResource( 2 )]
+transform = Transform( 1.73625, 0, 4.13954e-07, 0, 1.73625, 0, -4.13954e-07, 0, 1.73625, 0, -0.689108, 0 )
+visible = false
+visible_cull = true
+
+[connection signal="body_entered" from="Tsuru_carcasa/cola" to="." method="_on_cola_body_entered"]

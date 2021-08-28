@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Recursos/Graficos/Modelos/TsuruAlterado_Completo.gltf" type="PackedScene" id=1]
+
+[sub_resource type="PhysicsMaterial" id=3]
+rough = true
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 29, 3.57929, 29 )
@@ -11,6 +16,9 @@ metallic = 0.2
 
 [node name="Piso" type="StaticBody" parent="."]
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0 )
+collision_layer = 5
+collision_mask = 5
+physics_material_override = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Piso"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34575, 0 )
@@ -21,3 +29,6 @@ use_in_baked_light = true
 width = 58.259
 depth = 59.326
 material = SubResource( 2 )
+
+[node name="TsuruAlterado_Completo" parent="Piso" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1211, 87.1549, -1.59945 )

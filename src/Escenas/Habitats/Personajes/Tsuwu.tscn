@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Escenas/Habitats/Personajes/Tsuwu_vehiculo.tscn" type="PackedScene" id=1]
+
+[node name="Tsuwu" type="Spatial"]
+
+[node name="VehicleBody" parent="." instance=ExtResource( 1 )]
