@@ -171,3 +171,5 @@ material = SubResource( 6 )
 [node name="GIProbe" type="GIProbe" parent="."]
 extents = Vector3( 175.073, 34.5544, 174.333 )
 data = SubResource( 7 )
+
+[connection signal="input_event" from="Carro/Cajita" to="Carro" method="_on_Cajita_input_event"]

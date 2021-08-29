@@ -88,3 +88,11 @@ func align_with_y(xform, new_y):
 func camara_shake(cantidad):
 	var rshake = rand_range(0, 1)
 	camara.rotation_degrees = Vector3(0,0,cantidad*rshake*0.015)
+
+
+func _on_Cajita_input_event(camera, event, click_position, click_normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed == true:
+			camara.current = true
+		if event.button_index == BUTTON_LEFT and event.pressed == false:
+			print("Left Mouse Button Released")
