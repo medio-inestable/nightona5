@@ -37,17 +37,26 @@ shadow_color = Color( 0.6, 0.6, 0.6, 1 )
 [node name="Pista_Nightona5trillion" parent="." instance=ExtResource( 1 )]
 
 [node name="TsuruAlterado" parent="." instance=ExtResource( 2 )]
-transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -3.27562, 6.65092, 390.038 )
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 66.5499, 6.65092, 522.046 )
 piloteando = true
 
 [node name="TsuruAlterado2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -0.902756, 4.28437, 378.189 )
-
-[node name="TsuruAlterado3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -11.8813, 4.28437, 375.751 )
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 68.6272, 6.65089, 527.39 )
 
 [node name="TsuruAlterado4" parent="." instance=ExtResource( 2 )]
-transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -5.12539, 4.28437, 363.44 )
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 68.6272, 6.65089, 531.03 )
+
+[node name="TsuruAlterado5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 68.6272, 6.65089, 534.681 )
+
+[node name="TsuruAlterado6" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 70.1651, 6.65089, 538.793 )
+
+[node name="TsuruAlterado7" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 74.6111, 6.65089, 510.575 )
+
+[node name="TsuruAlterado3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, 72.8314, 6.65089, 516.544 )
 
 [node name="Cajita2" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5875, 5.98909, 0 )
